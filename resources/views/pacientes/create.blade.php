@@ -1,0 +1,102 @@
+@extends('layouts.app')
+@section('Titulo','Ingresar Paciente')
+
+@section('content')
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">INFORMACIÓN</h1><br><br>
+              </div>
+
+              <form method="post" action="{{ url('/pacientes/store')}}" class="user text-center">
+              {{ csrf_field() }}
+                
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input name="Nombres" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombres">
+                    </div>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input name="Apellidos" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Apellidos">
+                    </div>
+                </div>
+
+                <h4>Datos Paciente</h4>
+                <div class="form-group row">
+                    
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="Fecha">Fecha Nacimiento</label>
+                        <input id="Fecha" name="FechaNacimiento" type="date" class="form-control form-control-user">
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="Telefono">Telefono</label>
+                        <input name="Telefono" id="Telefono" type="text" class="form-control form-control-user">
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="Peso">Peso</label>
+                        <input name="Peso" id="Peso" class="form-control form-control-user" type="number" step="0.01">
+                    </div>
+                </div>
+                    
+                <div class="form-group row">
+                    
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="">Altura</label>
+                        <input name="Altura" type="number" class="form-control form-control-user" id="Altura" placeholder="Altura....." step="0.01">
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="TipoSangre">Tipo Sangre</label>
+                        <select name="TipoSangre" id="TipoSangre" class="form-control">
+                            <option value="O Negativo">O-</option>
+                            <option value="O Positivo">O+</option>
+                            <option value="A Negativo">A-</option>
+                            <option value="A Positivo">A+</option>
+                            <option value="B Negativo">B-</option>
+                            <option value="B Positivo">B+</option>
+                            <option value="AB Negativo">AB-</option>
+                            <option value="AB Positivo">AB+</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 mb-3 mb-sm-0">
+                        <label for="Sexo">Sexo</label>
+                        <select name="Sexo" id="Sexo" class="form-control">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    
+                </div> 
+
+                <h4>Operaciones - Observaciones</h4>
+                <div class="form-group row">
+                    <div class="col-md-6 col-sm-4 mb-3 mb-sm-0">  
+                        <textarea name="Operaciones" id="" cols="110" rows="2"></textarea>          
+                    </div>
+                </div>   
+
+                <button type="submit" class="btn btn-primary btn-user btn-block">Crear Registro</button>
+                
+              </form>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+ 
+
+
+
+@endsection
